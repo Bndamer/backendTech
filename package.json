@@ -1,0 +1,17 @@
+{
+    "name": "api-rest",
+    "version": "1.0.0",
+    "description": "Proyecto Api Rest",
+    "license": "MIT",
+    "author": "Brian Nicolas",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"  Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "devDependencies": {
+        "nodemon": "^3.1.10"
+    }
+}
