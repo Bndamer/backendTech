@@ -24,3 +24,36 @@ async function main() {
 }
 
 main();
+
+
+////////////////////////////configuracion del server//////////////////////////////////////////////////
+
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+
+dotenv.config(); // Carga variables de entorno desde .env
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middlewares
+app.use(cors());
+app.use(bodyParser.json());
+
+// Rutas (se configurarán más adelante)
+import productRoutes from "./router/products.router.js";
+import authRoutes from "./router/auth.router.js";
+
+app.use("/api/products", productRoutes);
+app.use("/auth", authRoutes);
+
+// Middleware para rutas no encontradas
+app.use((req, res) => {
+  res.status(404).json({ message: "Ruta no encontrada" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
