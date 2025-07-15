@@ -19,9 +19,9 @@ Este proyecto es una API REST para la gestión de productos de una tienda de alf
 ##  Instalación
 
 ```bash
-npm install
+npm install´´´
 
-Rutas de Autenticación:
+ Rutas de Autenticación:
 
 POST /auth/register
 Registra un nuevo usuario.
