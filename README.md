@@ -26,9 +26,11 @@ npm install
 
 POST /auth/register
 Registra un nuevo usuario.
+![Registro](./capturaspostman/registrousuario.png)
 
 POST /auth/login
 Devuelve un token JWT si las credenciales son válidas.
+![Login](./capturaspostman/loginUsuario.png)
 
 
 ## Rutas de Productos
