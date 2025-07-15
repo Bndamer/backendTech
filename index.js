@@ -30,7 +30,6 @@ main();
 
 import express from "express";
 import cors from "cors";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 dotenv.config(); // Carga variables de entorno desde .env
@@ -40,7 +39,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Rutas (se configurarán más adelante)
 import productRoutes from "./router/products.router.js";

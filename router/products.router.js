@@ -6,6 +6,7 @@ import {
   createProductController,
   deleteProductController,
 } from "../controller/products.controller.js";
+import { authenticateToken } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
@@ -16,9 +17,9 @@ router.get("/", getAllProductsController,);
 router.get("/:id", getProductByIdController);
 
 // POST /api/products/create
-router.post("/create", createProductController);
+router.post("/create",authenticateToken, createProductController);
 
 // DELETE /api/products/:id
-router.delete("/:id", deleteProductController);
+router.delete("/:id",authenticateToken, deleteProductController);
 
 export default router;

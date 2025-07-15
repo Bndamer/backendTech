@@ -1,5 +1,5 @@
 // models/products.model.js
-import { db } from "../src/data.js";
+import { Db } from "../src/data.js";
 import {
   collection,
   getDocs,
@@ -20,7 +20,7 @@ const collectionName = "products";
 
 // Obtener todos los productos// metodo get///
 const getAllProductsM = async () => {
-  const snapshot = await getDocs(collection(db, collectionName));
+  const snapshot = await getDocs(collection(Db, collectionName));
   const products = [];
   snapshot.forEach((doc) => {
     products.push({ id: doc.id, ...doc.data() });
@@ -30,7 +30,7 @@ const getAllProductsM = async () => {
 
 // Obtener un producto por ID //get by id//
 const getProductByIdM = async (id) => {
-  const ref = doc(db, collectionName, id);
+  const ref = doc(Db, collectionName, id);
   const docSnap = await getDoc(ref);
   if (!docSnap.exists()) throw new Error("Producto no encontrado");
   return { id: docSnap.id, ...docSnap.data() };
@@ -38,12 +38,12 @@ const getProductByIdM = async (id) => {
 
 // Crear un nuevo producto // metodo POST//
 const createProductM = async (productData) => {
-  const docRef = await addDoc(collection(db, collectionName), productData);
+  const docRef = await addDoc(collection(Db, collectionName), productData);
   return { id: docRef.id };
 };
 
 // Eliminar un producto por ID //metodo DELETE//
 const deleteProductM = async (id) => {
-  const ref = doc(db, collectionName, id);
+  const ref = doc(Db, collectionName, id);
   await deleteDoc(ref);
 };
