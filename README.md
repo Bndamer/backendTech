@@ -18,10 +18,11 @@ Este proyecto es una API REST para la gestión de productos de una tienda de alf
 
 ##  Instalación
 
-```bash
-npm install´´´
 
- Rutas de Autenticación:
+npm install
+
+
+ ## Rutas de Autenticación:
 
 POST /auth/register
 Registra un nuevo usuario.
@@ -30,7 +31,7 @@ POST /auth/login
 Devuelve un token JWT si las credenciales son válidas.
 
 
-Rutas de Productos
+## Rutas de Productos
 Nota: Estas rutas pueden ser protegidas con JWT.
 
 GET /api/products
@@ -46,12 +47,13 @@ DELETE /api/products/:id
 Elimina un producto por ID.
 
 
-Manejo de Errores
+## Manejo de Errores
 404 - Ruta no encontrada
 
 401 - Credenciales inválidas
 
 500 - Error interno del servidor
+
 
 Autor
 Brian Nicolás Damer – TP Backend – Apapacho
